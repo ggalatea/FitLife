@@ -1,20 +1,24 @@
-# Проект FitLife - MVP версия 1.0
+# Проект FitLife - MVP версия 2.0
 import sys
 
 sys.stdin.reconfigure(encoding="utf-8")
 sys.stdout.reconfigure(encoding="utf-8")
 
 # 1. Знакомство
-user_name = input("Привет! Как тебя зовут? ").title()
-user_age = int(input("Сколько тебе лет? "))
+user_name = input("Привет! Как тебя зовут?").title()
+while True:
+    try:
+        user_age = int(input("Сколько тебе лет?"))
+        break  # Выход из цикла при успешном преобразовании
+    except ValueError:
+        print("Пожалуйста, введи возвраст, используя цифры")
 
 # 2. Сбор данных
-user_weight = float(input("Какой у тебя вес? (например, 52)"))
-user_height = float(input("Какого ты рост? (например, 1.75)"))
+user_weight = float(input("Какой у тебя вес? (например, 52)").replace(",", "."))
+user_height = float(input("Какого ты рост? (например, 1.75)").replace(",", "."))
 
 # 3. Логика расчетов (Функции как "черный ящик": используем арифметику)
-bmi = user_weight / (user_height**2)  # расчёт индекса массы тела
-bmi = round(bmi, 1)
+bmi = round((user_weight / (user_height**2)), 1)  # расчёт индекса массы тела
 
 # Подсчет воды: вес * 30 мл
 WATER_PER_KG = 30
