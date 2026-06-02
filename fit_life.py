@@ -20,18 +20,14 @@ while True:
 # 2. Сбор данных
 while True:
     try:
-        user_weight = float(
-            input("Какой у тебя вес?(например, 52)").replace(",", ".")
-            )
+        user_weight = float(input("Какой у тебя вес?(например, 52)"))
         break  # Выход из цикла при успешном преобразовании
     except ValueError:
         print("Пожалуйста, введи вес, используя цифры")
 
 while True:
     try:
-        user_height = float(
-            input("Какого ты рост?(например, 1.75)").replace(",", ".")
-            )
+        user_height = float(input("Какого ты рост?(например, 1.75)"))
         break  # Выход из цикла при успешном преобразовании
     except ValueError:
         print("Пожалуйста, введи рост, используя цифры")
