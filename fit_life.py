@@ -20,21 +20,25 @@ while True:
 # 2. Сбор данных
 while True:
     try:
-        user_weight = float(input("Какой у тебя вес?(например, 52)").replace(",", "."))
+        user_weight = float(
+            input("Какой у тебя вес?(например, 52)").replace(",", ".")
+            )
         break  # Выход из цикла при успешном преобразовании
     except ValueError:
         print("Пожалуйста, введи вес, используя цифры")
 
 while True:
     try:
-        user_height = float(input("Какого ты рост?(например, 1.75)").replace(",", "."))
+        user_height = float(
+            input("Какого ты рост?(например, 1.75)").replace(",", ".")
+            )
         break  # Выход из цикла при успешном преобразовании
     except ValueError:
         print("Пожалуйста, введи рост, используя цифры")
 
 
 # 3. Логика расчетов (Функции как "черный ящик": используем арифметику)
-bmi = round((user_weight / (user_height**2)), ROUNDING_UP)  # расчёт индекса массы тела
+bmi = round((user_weight / (user_height**2)), ROUNDING_UP)
 water_ml = user_weight * WATER_PER_KG
 water_l = round((water_ml / WATER_CONVERT_TO_LITERS), ROUNDING_UP)
 
