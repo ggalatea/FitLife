@@ -1,12 +1,12 @@
 # Проект FitLife - MVP версия 2.0
-WATER_PER_KG = 30
-WATER_CONVERT_TO_LITERS = 1000
-ROUNDING_UP = 1
-
 import sys
 
 sys.stdin.reconfigure(encoding="utf-8")
 sys.stdout.reconfigure(encoding="utf-8")
+
+WATER_PER_KG = 30
+WATER_CONVERT_TO_LITERS = 1000
+ROUNDING_UP = 1
 
 # 1. Знакомство
 user_name = input("Привет! Как тебя зовут?").title()
